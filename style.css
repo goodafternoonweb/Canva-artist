@@ -1,0 +1,341 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Sacramento&display=swap');
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: white;
+    color: #333;
+    background-size: cover;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Navbar */
+nav {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+nav a.active,
+nav a:hover {
+    color: lightgreen;
+}
+
+/* Gallery */
+main {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.art-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    transition: transform 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.art-card img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.art-card:hover img {
+    transform: scale(1.05);
+}
+
+.price {
+    display: block;
+    margin-top: 5px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.pieces {
+    font-size: 19px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.lightbox:target {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    background: #b8b6b6;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 6px;
+    object-fit: contain;
+    cursor: zoom-in;
+    transition: transform 0.3s;
+}
+
+.lightbox-content img:active {
+    transform: scale(1.2);
+}
+
+.sold-info {
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 4px solid white;
+    background: url('C:/Users/Mithila Computer/OneDrive/Desktop/notes-photos-site/images/profilepic.jpg') no-repeat center/cover;
+    display: block;
+    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    animation: drip 3s infinite;
+    clip-path: polygon(
+        0% 0%, 100% 0%, 100% 80%, 90% 85%, 85% 75%, 75% 85%, 
+        65% 75%, 55% 85%, 45% 75%, 35% 85%, 25% 75%, 15% 85%, 0% 80%
+    );
+}
+
+.profile-pic::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: inherit;
+    border-radius: 50% 50% 0 0;
+    animation: drip 2s infinite;
+}
+
+/* Dripping Animation */
+@keyframes drip {
+    0%, 100% {
+        clip-path: polygon(
+            0% 0%, 100% 0%, 100% 80%, 90% 85%, 85% 75%, 75% 85%, 
+            65% 75%, 55% 85%, 45% 75%, 35% 85%, 25% 75%, 15% 85%, 0% 80%
+        );
+    }
+    50% {
+        clip-path: polygon(
+            0% 0%, 100% 0%, 100% 78%, 90% 83%, 85% 73%, 75% 83%, 
+            65% 73%, 55% 83%, 45% 73%, 35% 83%, 25% 73%, 15% 83%, 0% 78%
+        );
+    }
+}
+
+/* Text Highlights */
+.highlight {
+    color: #00ddff;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Artist Name */
+.artist-name {
+    font-family: 'Sacramento', cursive;
+    font-size: 36px;
+    color: #ff5e02;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.works {
+    font-family: 'Sacramento', cursive;
+    font-size: 38px;
+    color: #00ff37;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.aboutme {
+    font-family: 'Sacramento', cursive;
+    font-size: 38px;
+    color: #00ff37;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contactme {
+    font-family: 'Sacramento', cursive;
+    font-size: 38px;
+    color: #00ff0d;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tagline {
+    font-family: 'Sacramento', ;
+    font-size: 24px;
+    color: #4db8ff;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.highlightme {
+    color: #d9ff02;
+    text-decoration: none;
+}
+
+.active {
+    color: #ff5e02;
+    font-weight: bold;
+}
+
+/* Mobile / No Hover Fix */
+@media (hover: none) {
+    .art-card:hover img {
+        transform: none;
+    }
+    .lightbox-content img:active {
+        transform: scale(1.1);
+    }
+}
+a {
+    text-decoration: none;
+}
+
+.price a, 
+.pieces a, 
+.name a {
+    text-decoration: none;
+    color: inherit; /* keeps the same color as your .price, .pieces, .name */
+}
+.bio {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lightbox:target .bio {
+  opacity: 1;
+  transform: translateY(0);
+}
+.bio {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-top: 10px;
+  border-left: 4px solid #4CAF50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.bio h3 {
+  margin: 0 0 5px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.bio p {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
+  line-height: 1.5;
+}
+.bio-container {
+  margin-top: 15px;
+}
+
+.toggle-bio {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.toggle-bio:hover {
+  background-color: #45a049;
+}
+
+.bio {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-left: 4px solid #4CAF50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.hidden {
+  display: none;
+}
